@@ -3,6 +3,7 @@ import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
+import MovieList from "../../components/movieList/MovieList";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -29,6 +30,7 @@ const Home = () => {
         {popularMovies.map((movie) => {
           return (
             <Link
+              key={movie.id}
               style={{ textDecoration: "none", color: "white" }}
               to={`/movie/${movie.id}`}
             >
@@ -47,7 +49,7 @@ const Home = () => {
                 <div className="posterImage__runtime">
                   {movie ? movie.release_date : ""}
                   <span className="posterImage__rating">
-                    {movie ? movie.vote_average : ""}
+                    {movie ? movie.vote_average.toFixed(1) : ""}
                     <i className="fa fa-star" />
                   </span>
                 </div>
@@ -59,6 +61,7 @@ const Home = () => {
           );
         })}
       </Carousel>
+      <MovieList />
     </div>
   );
 };
