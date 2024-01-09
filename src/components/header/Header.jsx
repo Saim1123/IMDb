@@ -10,14 +10,14 @@ const Header = () => {
         <Link to="/">
           <img src={logo} alt="logo" className="header_icon" />
         </Link>
-        <Link to="/movies/popular" src="" className="header_icon">
-          Popular
+        <Link to="/movies/popular" style={{ textDecoration: "none" }}>
+          <span>Popular</span>
         </Link>
-        <Link to="/movies/top_rated" src="" className="header_icon">
-          Top_Rated
+        <Link to="/movies/top_rated" style={{ textDecoration: "none" }}>
+          <span>Top Rated</span>
         </Link>
-        <Link to="/movies/upcoming" src="" className="header_icon">
-          Upcoming
+        <Link to="/movies/upcoming" style={{ textDecoration: "none" }}>
+          <span>Upcoming</span>
         </Link>
       </div>
     </div>
